@@ -45,7 +45,7 @@ export const API = {
   dispatchEvent,
   randomInt: (min = 0, max = 1) => (floor(random() * (max - min + 1)) + min),
   setClasses: (defaultClasses = false, isActiveClasses = false) => {
-    //defaultClasses = ['className']
+    // defaultClasses = ['className']
     //isActiveClasses = { className: 'condition' }
     let classNames = [],
       className = "";

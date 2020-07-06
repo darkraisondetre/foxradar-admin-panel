@@ -1,13 +1,17 @@
 .button {
-    display: inline-flex;
-    text-align: center;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 .8rem;
     border: none;
     border-radius: .3rem;
     color: $white;
     text-decoration: none;
-    padding: .7em 1.1em;
     outline: none;
     cursor: pointer;
+
     &.button_green {
         background: $green;
     }
@@ -28,13 +32,10 @@
     &.border_green {
         border: 1px solid $green;
     }
-    &.p_pagination {
-        padding: .3em .7em;
-    }
 }
 
 .button__icon {
-    padding-left: .4rem;
+    margin: 0 .2rem;
 }
 
 .bulkContainer {
@@ -43,23 +44,25 @@
 }
 
 .list {
+    width: 240px;
     padding: 0;
     position: absolute;
     border: 1px solid grey;
     border-radius: .3rem;
     background: white;
-    right: calc(0% - 193px);
-    overflow-y: hidden;
+    right: -240px;
+    top: 0;
+    z-index: 999;
 }
 
 .list__item {
-   padding: 0.5rem 1rem;
+    padding: 0 1rem;
+    line-height: 40px;
+    color: $textGrey;
     &.bb {
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $textGrey;
     }
 }
-
-
 
 .list__item a{
    text-decoration: none;
@@ -70,6 +73,8 @@
     padding: 0.4rem 0.6rem;
     border: 1px solid grey;
     border-radius: .3rem;
+    outline: none;
+    height: 21px;
 }
 
 .hidden {
@@ -78,5 +83,5 @@
 
 .disabled {
     opacity: .5;
-    cursor: default;
+    cursor: not-allowed;
 }
