@@ -1,59 +1,65 @@
 .button {
+    display: inline-flex;
+    text-align: center;
     border: none;
+    border-radius: .3rem;
     color: $white;
     text-decoration: none;
-    padding: .7em 1.5em;
+    padding: .7em 1.1em;
     outline: none;
+    cursor: pointer;
+    &.button_green {
+        background: $green;
+    }
+    &.button_blue {
+        background: $blue;
+    }
+    &.button_orange {
+        background: $orange;
+    }
+    &.button_transparent {
+        background: transparent;
+        color: $green;
+        padding: .3em 1em;
+    }
+    &.br-1 {
+        border-radius: 1rem;
+    }
+    &.border_green {
+        border: 1px solid $green;
+    }
+    &.p_pagination {
+        padding: .3em .7em;
+    }
 }
 
-.br-10 {
-    border-radius: 1rem;
+.button__icon {
+    padding-left: .4rem;
 }
 
-.br-3 {
-    border-radius: 0.3rem;
-}
-
-.button_green {
-    background: $green;
-}
-
-.button_blue {
-    background: $blue;
-}
-
-.button_orange {
-    background: $orange;
-}
-
-.button_transparent {
-    background: transparent;
-    color: $green
-}
-
-.border_green {
-    border: 1px solid $green;
-}
-
-.listContainer {
-    width: 100%;
-    max-width: 400px;
+.bulkContainer {
+    display: inline-flex;
     position: relative;
 }
 
 .list {
-    list-style: none;
     padding: 0;
     position: absolute;
     border: 1px solid grey;
+    border-radius: .3rem;
     background: white;
-    left: 129px;
-    top: -34px;
+    right: calc(0% - 193px);
+    overflow-y: hidden;
 }
 
 .list__item {
    padding: 0.5rem 1rem;
+    &.bb {
+        border-bottom: 1px solid grey;
+    }
 }
+
+
 
 .list__item a{
    text-decoration: none;
@@ -63,8 +69,14 @@
 .input {
     padding: 0.4rem 0.6rem;
     border: 1px solid grey;
+    border-radius: .3rem;
 }
 
 .hidden {
     display: none;
+}
+
+.disabled {
+    opacity: .5;
+    cursor: default;
 }

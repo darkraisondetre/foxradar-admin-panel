@@ -21,17 +21,15 @@ export default class Button extends React.Component {
 
     render() {
         return (
-            <div>
-                <button
-                className={api.setClasses(
-                    [this.defaultClassName, "button", this.props.className],
-                    {isLink: this.props.isLink}
-                )}
-                onClick={this.props.onClick}
-                >
-                    {this.props.title}
-                    {this.props.icon && this.renderIcon()}
-                </button>
+            <div
+            className={api.setClasses(
+                [this.defaultClassName, "button", this.props.className],
+                {isLink: this.props.isLink}
+            )}
+            onClick={this.props.onClick}
+            >
+                {this.props.title}
+                {this.props.icon && this.renderIcon()}
             </div>
         );
     }

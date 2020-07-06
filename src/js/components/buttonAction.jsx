@@ -16,7 +16,7 @@ export default class ButtonAction extends React.Component {
     static defProps ={
         className: "",
         isLink: false,
-        title: "",
+        title: "Button",
         icon: false,
         actionsList: () => false
     }
@@ -28,13 +28,13 @@ export default class ButtonAction extends React.Component {
     }
 
     renderIcon = () => {
-        if (typeof this.props.icon !== "string") return <FontAwesomeIcon icon={this.props.icon} />
+        if (typeof this.props.icon !== "string") return <FontAwesomeIcon icon={this.props.icon} className="button__icon"/>
     }
 
     render() {
         return (
-            <div>
-                <button
+            <div className="bulkContainer">
+                <div
                 className={api.setClasses(
                     [this.defaultClassName, "button", this.props.className],
                     {isLink: this.props.isLink}
@@ -44,20 +44,18 @@ export default class ButtonAction extends React.Component {
                     {this.props.title}
                     {this.props.icon && this.renderIcon()}
                     
-                </button>
-                <div className={this.state.isToggleOn ? 'listContainer hidden' : 'listContainer'}>
-                    <ul className="list br-3">
-                        <li className="list__item"><a href="#">Disconnect All Users for All</a></li>
-                        <li className="list__item"><a href="#">Disable All</a></li>
-                        <li className="list__item"><a href="#">Enable All</a></li>
-                        <hr />
-                        <li className="list__item"><a href="#">Disconnect All Users for Selected</a></li>
-                        <li className="list__item"><a href="#">Disable Selected</a></li>
-                        <li className="list__item"><a href="#">Enable Selected</a></li>
-                        <li className="list__item"><a href="#">Delete Selected</a></li>
-
-                    </ul>
                 </div>
+                <select className={this.state.isToggleOn ? 'list hidden' : 'list'} multiple size="9">
+                    <option className="list__item">Adjust Time for All</option>
+                    <option className="list__item">Disconnect All Users for All</option>
+                    <option className="list__item">Disable All</option>
+                    <option className="list__item bb">Enable All</option>
+                    <option className="list__item">Adjust Time for Selected</option>
+                    <option className="list__item">Disconnect Selected</option>
+                    <option className="list__item">Disable Selected</option>
+                    <option className="list__item">Enable Selected</option>
+                    <option className="list__item">Delete Selected</option>
+                </select>
             </div>
         );
     }
