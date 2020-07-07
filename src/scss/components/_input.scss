@@ -1,4 +1,4 @@
-.inputForm {
+.container {
     display: flex;
 }
 
@@ -16,7 +16,7 @@
     }
 }
 
-.input-container label{
+.input-container div{
     color: $textGrey;
     margin: 0.2rem .6rem;
 }
