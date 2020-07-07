@@ -3,18 +3,18 @@ import api from '../api';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Button extends React.Component {
-    static defaultProps ={
-        className: "",
-        isLink: false,
-        title: "",
-        icon: false,
-        onClick: () => false
-    }
+static defaultProps ={
+    className: "",
+    isLink: false,
+    title: "",
+    icon: false,
+    onClick: () => false
+}
 
-    renderIcon = () => {
-        if (typeof this.props.icon !== "string") return <FontAwesomeIcon icon={this.props.icon} className="button__icon"/>
-        return false;
-    }
+renderIcon = () => {
+    if (typeof this.props.icon !== "string") return <FontAwesomeIcon icon={this.props.icon} className="button__icon"/>
+    return false;
+}
 
     render() {
         return (

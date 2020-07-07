@@ -1,3 +1,22 @@
-form {
+.inputForm {
     display: flex;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    
+    &.label_right {
+        flex-direction: row-reverse;
+    }
+    &.label_top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.input-container label{
+    color: $textGrey;
+    margin: 0.2rem .6rem;
 }

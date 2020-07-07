@@ -1,4 +1,5 @@
 .button {
+    max-width: 12rem;
     height: 35px;
     display: flex;
     align-items: center;
@@ -12,8 +13,14 @@
     outline: none;
     cursor: pointer;
 
+    &.button_red {
+        background: $red;
+    }
     &.button_green {
         background: $green;
+    }
+    &.button_darkGreen {
+        background: $darkGreen;
     }
     &.button_blue {
         background: $blue;
@@ -23,14 +30,14 @@
     }
     &.button_transparent {
         background: transparent;
-        color: $green;
+        color: $darkGreen;
         padding: .3em 1em;
     }
     &.br-1 {
         border-radius: 1rem;
     }
-    &.border_green {
-        border: 1px solid $green;
+    &.border_darkGreen {
+        border: 1px solid $darkGreen;
     }
 }
 
