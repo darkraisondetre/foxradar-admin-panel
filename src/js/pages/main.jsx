@@ -2,6 +2,8 @@ import React from 'react';
 import Button from '../components/button';
 import SelectButton from '../components/select';
 import Input from '../components/input'
+import Radio from '../components/radio';
+import Stat from '../components/stat';
 import { faChevronDown, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 export default function Main() {
@@ -15,11 +17,20 @@ export default function Main() {
       <Button title="Set Trial Period" className="button_orange" />
       <Button className="button_red" icon={faEllipsisH} />
       <Input label="Search: " placeholder="Click to Find" />
-      <Input label="Name " placeholder="Name" className="label_right" />
+      <Input label="Name " className="label_right" />
       <SelectButton listItems={listItemsOther} size="5" icon={faEllipsisH} className="button_darkGreen" />
+      <Radio radioItems={radioItems} title="Enable" value="0"/>
+      <Stat title="Registered Users" text="0"/>
+      <Stat title="Total Traffic Used" text="5 GB"/>
     </ div>
   );
 }
+
+const radioItems = [
+  { title: 'Enabled' },
+  { title: 'Disabled' },
+  { title: 'Deleted' }
+]
 
 const listItems = [
   { id: 0, title: 'Adjust Time for All' },

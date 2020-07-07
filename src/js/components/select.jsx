@@ -16,10 +16,6 @@ export default class SelectButton extends React.Component {
     });
   }
 
-  handlerClick = (event) => {
-    alert(event.currentTarget.getAttribute('value'));
-  }
-
   render() {
     return (
       <div className="bulkContainer">
@@ -42,8 +38,7 @@ export default class SelectButton extends React.Component {
                     ["list__item", item.devider === 1 ? "bb" : ""]
                   )}
                   key={index}
-                  ref={ref => this.listEl = ref}
-                  onClick={this.handlerClick}
+                  onClick={() => alert(index)}
                   value={index}>
                   {item.title}
                 </div>
