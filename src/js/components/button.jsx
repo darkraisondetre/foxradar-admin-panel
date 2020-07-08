@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default class Button extends React.Component {
   static defaultProps = {
     className: "",
-    isLink: false,
     title: "",
     icon: false,
     onClick: () => false
@@ -21,7 +20,6 @@ export default class Button extends React.Component {
       <div
         className={api.setClasses(
           ["button", this.props.className],
-          { isLink: this.props.isLink }
         )}
         onClick={this.props.onClick}
       >

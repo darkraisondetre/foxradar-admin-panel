@@ -10,9 +10,9 @@ export default class Stat extends React.Component {
 
   render() {
     return (
-      <div className="stat-container">
-        <div className="stat-container__title">{this.props.title}</div>
-        <div className="stat-container__text">{this.props.text}</div>
+      <div className="stat">
+        <div className="stat__title">{this.props.title}</div>
+        <div className="stat__text">{this.props.text}</div>
       </div>
     );
   }

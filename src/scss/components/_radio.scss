@@ -1,15 +1,22 @@
-.radio__button {
+.radioContainer {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.radio{
+.radio {
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+    margin: .4rem .6rem;
+}
+
+.radio__button{
     display: inline-block;
     width: 24px;
     height: 24px;
     border: 2px solid $textGrey;
     border-radius: 100%;
-    cursor:pointer;
     margin: 2px 0;
     position: relative;
 

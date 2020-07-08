@@ -6,6 +6,7 @@
     justify-content: center;
     position: relative;
     padding: 0 .8rem;
+    margin: 0 .4rem;
     border: none;
     border-radius: .3rem;
     color: $white;
@@ -43,44 +44,6 @@
 
 .button__icon {
     margin: 0 .2rem;
-}
-
-.bulkContainer {
-    display: inline-flex;
-    position: relative;
-}
-
-.list {
-    width: 240px;
-    padding: 0;
-    position: absolute;
-    border: 1px solid grey;
-    border-radius: .3rem;
-    background: white;
-    right: -240px;
-    top: 0;
-    z-index: 999;
-}
-
-.list__item {
-    padding: 0 1rem;
-    line-height: 40px;
-    color: $textGrey;
-    &.bb {
-        border-bottom: 1px solid $textGrey;
-    }
-}
-
-.input {
-    padding: 0.4rem 0.6rem;
-    border: 1px solid grey;
-    border-radius: .3rem;
-    outline: none;
-    height: 21px;
-}
-
-.hidden {
-    display: none;
 }
 
 .disabled {

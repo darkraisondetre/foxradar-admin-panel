@@ -1,4 +1,4 @@
-.stat-container {
+.stat {
     width: 100%;
     max-width: 200px;
     height: 5.5rem;
@@ -9,17 +9,17 @@
     background: $white;
     border: none;
     border-radius: .5rem;
-    box-shadow: 0 1px 5px rgb(82, 81, 81);
+    box-shadow: $shadow;
     padding: .8rem;
+    margin: .4rem;
 }
 
-.stat-container__title {
+.stat__title {
     color: $darkGrey;
     padding-left: 3px;
 }
 
-.stat-container__text {
+.stat__text {
     color: $textGrey;
-    // font-weight: 700;
     font-size: 2.4rem;
 }

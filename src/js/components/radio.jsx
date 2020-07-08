@@ -5,8 +5,7 @@ export default class Radio extends React.Component {
   constructor() {
     super();
     this.state = {
-      clickedItem: null,
-      isToggleOn: false
+      value: 0,
     };
   }
 
@@ -14,27 +13,29 @@ export default class Radio extends React.Component {
     className: ""
   }
 
-  changeChose = (clickedId) => {
+  onChange = (id) => {
     this.setState({
-      isToggleOn: !this.state.isToggleOn,
-      clickedItem: clickedId
+      value: id
     });
-    console.log(clickedId);
+    console.log(id);
   }
 
   render() {
+    const radioValue = {
+      value: this.state.value,
+    }
     return (
-      <div>
-        {this.props.radioItems.map((item, index) => {
+      <div className="radioContainer" value={radioValue.value}>
+        {this.props.list.map((item, index) => {
           return <div
-            className="radio__button"
+            className="radio"
             key={index}
-            value={index}>
+            onClick={() => this.onChange(index)}>
             <div
               className={api.setClasses(
-                ["radio",  this.state.clickedItem === index ? "selected" : ""]
-              )}
-              onClick={() => this.changeChose(index)}></div>
+                [this.className, "radio__button"],
+                {selected: this.state.value === index}
+              )}></div>
             <div className="radio__title">{item.title}</div>
           </div>
         })}

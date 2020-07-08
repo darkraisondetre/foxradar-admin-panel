@@ -1,0 +1,30 @@
+.block {
+    width: 100%;
+    padding: 1rem;
+    background-color: $white;
+    border-radius: .4rem;
+    box-shadow: $shadow;
+}
+
+.block__title {
+    margin-bottom: .8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block__title_name {
+    font-size: 1.8rem;
+    color: $darkGrey;
+}
+
+.block__title_tools {
+    display: flex;
+}
+
+.block__main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
