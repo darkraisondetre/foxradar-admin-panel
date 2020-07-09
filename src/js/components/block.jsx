@@ -5,14 +5,14 @@ export default class Block extends React.Component {
   static defaultProps = {
     className: "",
     title: "Block",
-    maxWidth: false,
   }
 
   render() {
     return (
       <div
-        className="block"
-        style={{ maxWidth: `${this.props.maxWidth}px` }}>
+      className={api.setClasses(
+        ["block", this.props.className],
+        )}>
         <div className="block__title">
           {this.props.title}
           {this.props.blockTools}

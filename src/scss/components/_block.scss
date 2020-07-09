@@ -1,26 +1,38 @@
 .block {
-    width: 100%;
-    padding-top: 1rem;
+    width: fit-content;
     background-color: $white;
     border-radius: .4rem;
     box-shadow: $shadow;
 }
 
 .block__title {
-    margin-bottom: .8rem;
+    margin: .7rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: $darkGrey;
     padding: 0 1rem;
-    &.block__title_small {
-        font-size: 1.2rem;
-    }
+    font-weight: bold;
 }
 
-.block__main {
+.block.block__title_small .block__title {
+    font-size: 1.2rem;
+}
+
+.block.block_grey .block__main {
+    font-size: 1.2rem;
     background-color: $bGrey;
+}
+
+.block.block__main_p0 .block__main {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.block__main {
     padding: 0 1rem;
     padding-bottom: 1rem;
+    border-radius: 0 0 1rem 1rem;
 }

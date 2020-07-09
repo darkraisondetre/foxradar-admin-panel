@@ -39,8 +39,6 @@
     color: $darkGrey;
 }
 
-.input-container input {
-    width: 100%;
-    max-width: 190px;
-    min-width: 30px;
+.input-container.small input {
+    width: 35px;
 }

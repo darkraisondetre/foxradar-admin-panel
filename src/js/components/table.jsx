@@ -14,16 +14,16 @@ export default class SimpleTable extends React.Component {
 
   render() {
     return (
-      <TableContainer component={Paper}>
-        <Table className="table" aria-label="simple table">
-          <TableHead>
+      <TableContainer component={Paper} id="tableContainer">
+        <Table className="table" id="table" aria-label="simple table">
+          <TableHead id="table__head">
             <TableRow>
               {this.props.headCells.map((item, index) => {
                 return <TableCell key={index} align="right">{item.label}</TableCell>
               })}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody id="table__body">
             {this.props.rowCells.map((row) => (
               <TableRow key={row.id}>
                 <TableCell align="right" id={row.id}>{row.id}</TableCell>

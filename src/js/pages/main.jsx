@@ -19,7 +19,6 @@ export default function Main() {
       <Button title="Set Trial Period" className="button_orange" />
       <Button className="button_red" icon={faEllipsisH} />
       <Input label="Search: " placeholder="Click to Find" />
-      <Input label="Name " className="label_right" />
       <SelectButton list={listItemsOther} size="5" value="0" icon={faEllipsisH} className="button_darkGreen" />
       <Radio list={radioItems} title="Enable" value="0" />
       <Stat title="Registered Users" text="0" />
@@ -31,7 +30,7 @@ export default function Main() {
       </div>
       <Block
         title="Users"
-        className="column"
+        className="block__main_p0"
         blockTools={
           <div className="row">
             <SelectButton
@@ -49,22 +48,22 @@ export default function Main() {
         </div>
       </Block >
 
-      <Block title="Adjust Time for john@gmail.com">
+      <Block title="Adjust Time for john@gmail.com" className="block__title_small block_grey">
         <div className="row row_column row_bBorder">
           <div className="row__title row__title_small">Deposit</div>
           <div className="row row_between">
-            <Input label="days" className="label_right" />
-            <Input label="hours" className="label_right" />
-            <Input label="minutes" className="label_right" />
+            <Input label="days" className="label_right small" />
+            <Input label="hours" className="label_right small" />
+            <Input label="minutes" className="label_right small" />
             <Button title="Apply" className="button_blue" />
           </div>
         </div>
         <div className="row row_column row_bBorder">
           <div className="row__title row__title_small">Reduce</div>
           <div className="row row_between">
-            <Input label="days" className="label_right" />
-            <Input label="hours" className="label_right" />
-            <Input label="minutes" className="label_right" />
+            <Input label="days" className="label_right small" />
+            <Input label="hours" className="label_right small" />
+            <Input label="minutes" className="label_right small" />
             <Button title="Apply" className="button_blue" />
           </div>
         </div>
@@ -77,7 +76,7 @@ export default function Main() {
         </div>
       </Block>
 
-      <Block title="Create New User">
+      <Block title="Create New User" className="block__title_small block_grey">
         <div className="row">
           <Input label="Email" className="label_top label_big" />
         </div>
@@ -90,9 +89,9 @@ export default function Main() {
         <div className="row row_column row_bBorder">
           <div className="row__title row__title_small">Time Left</div>
           <div className="row row_between">
-            <Input label="days" className="label_right" />
-            <Input label="hours" className="label_right" />
-            <Input label="minutes" className="label_right" />
+            <Input label="days" className="label_right small" />
+            <Input label="hours" className="label_right small" />
+            <Input label="minutes" className="label_right small" />
           </div>
         </div>
         <div className="row row_between">
@@ -101,7 +100,7 @@ export default function Main() {
         <div className="row row_between">
           <Radio list={radioItems2} title="Enable" value="0" />
         </div>
-          <Button title="Create" className="button_blue" />
+          <Button title="Create" className="button_blue center" />
       </Block>
     </ div>
   );
