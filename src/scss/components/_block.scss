@@ -1,6 +1,6 @@
 .block {
     width: 100%;
-    padding: 1rem;
+    padding-top: 1rem;
     background-color: $white;
     border-radius: .4rem;
     box-shadow: $shadow;
@@ -10,21 +10,17 @@
     margin-bottom: .8rem;
     display: flex;
     justify-content: space-between;
-}
-
-.block__title_name {
-    font-size: 1.8rem;
+    align-items: center;
+    font-size: 1.4rem;
     color: $darkGrey;
-}
-
-.block__title_tools {
-    display: flex;
+    padding: 0 1rem;
+    &.block__title_small {
+        font-size: 1.2rem;
+    }
 }
 
 .block__main {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    background-color: $bGrey;
+    padding: 0 1rem;
+    padding-bottom: 1rem;
 }

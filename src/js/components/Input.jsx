@@ -8,7 +8,7 @@ export default class Input extends React.Component {
   }
 
   static defaultProps = {
-    placeholder: "Text",
+    placeholder: "",
     className: "",
   }
 

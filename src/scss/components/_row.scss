@@ -1,5 +1,20 @@
 .row {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: .5rem 0;
+    &.row_bBorder {
+        border-bottom: 1px solid $textGrey;
+    }
+    &.row_column {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    &.row_between {
+        justify-content: space-between;
+    }
+    &.row_center {
+        justify-content: center;
+    }
 }
 
 .row__title {
@@ -7,15 +22,7 @@
     font-weight: bold;
     color: $darkGrey;
     margin-bottom: .4rem;
-
-    &.row_column {
-        flex-basis: 100%;
+    &.row__title_small {
+        font-size: 1.1rem;
     }
-}
-
-.row__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
 }

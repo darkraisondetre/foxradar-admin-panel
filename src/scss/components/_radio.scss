@@ -9,6 +9,9 @@
     align-items: center;
     cursor:pointer;
     margin: .4rem .6rem;
+    &:first-child {
+        margin-left: 0;
+    }
 }
 
 .radio__button{

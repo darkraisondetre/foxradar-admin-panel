@@ -5,15 +5,15 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0 .8rem;
-    margin: 0 .4rem;
+    padding: 0 1rem;
+    margin: .4rem .4rem;
     border: none;
     border-radius: .3rem;
     color: $white;
     text-decoration: none;
     outline: none;
     cursor: pointer;
-
+    font-size: 1rem;
     &.button_red {
         background: $red;
     }
@@ -39,6 +39,11 @@
     }
     &.border_darkGreen {
         border: 1px solid $darkGreen;
+    }
+    &.center {
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
     }
 }
 

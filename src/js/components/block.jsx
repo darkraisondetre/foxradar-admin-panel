@@ -5,20 +5,22 @@ export default class Block extends React.Component {
   static defaultProps = {
     className: "",
     title: "Block",
+    maxWidth: false,
   }
 
   render() {
     return (
       <div
-        className="block">
+        className="block"
+        style={{ maxWidth: `${this.props.maxWidth}px` }}>
         <div className="block__title">
-            <div className="block__title_name">{this.props.title}</div>
-            <div className="block__title_tools">{this.props.blockTitle}</div>
+          {this.props.title}
+          {this.props.blockTools}
         </div>
         <div className="block__main">
-            {this.props.blockMain}
+          {this.props.children}
         </div>
-      </div>
+      </div>      
     );
   }
 }
