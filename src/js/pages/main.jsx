@@ -13,8 +13,8 @@ export default function Main() {
   return (
     <div className="main-page">
       <Button title="Create New User" className="button_green" />
-      <Button title="Enable" className="button_transparent border_darkGreen br-1" />
-      <Button title="«" className="button_transparent border_darkGreen disabled" />
+      <Button title="Enable" className="button_darkGreen button_transparent br-1" />
+      <Button title="«" className="button_darkGreen button_transparent disabled" />
       <SelectButton title="Bulk Actions " list={listItems} size="9" value="0" icon={faChevronDown} className="button_blue" />
       <Button title="Set Trial Period" className="button_orange" />
       <Button className="button_red" icon={faEllipsisH} />
@@ -77,16 +77,10 @@ export default function Main() {
       </Block>
 
       <Block title="Create New User" className="block__title_small block_grey">
-        <div className="row">
-          <Input label="Email" className="label_top label_big" />
-        </div>
-        <div className="row">
-          <Input label="Password" className="label_top label_big" />
-        </div>
-        <div className="row">
-          <Input label="Repeat Password" className="label_top label_big" />
-        </div>
-        <div className="row row_column row_bBorder">
+        <Input label="Email" className="label_top label_big" />
+        <Input label="Password" className="label_top label_big" />
+        <Input label="Repeat Password" className="label_top label_big" />
+        <div className="row row_column">
           <div className="row__title row__title_small">Time Left</div>
           <div className="row row_between">
             <Input label="days" className="label_right small" />
@@ -94,13 +88,37 @@ export default function Main() {
             <Input label="minutes" className="label_right small" />
           </div>
         </div>
-        <div className="row row_between">
-          <Radio list={radioItems2} title="Enable" value="0" />
+        <div className="row row_column">
+          <div className="row__title row__title_small">Countdown</div>
+          <div className="row row_between">
+            <Radio list={radioItems2} title="Enable" value="0" />
+          </div>
         </div>
-        <div className="row row_between">
-          <Radio list={radioItems2} title="Enable" value="0" />
+        <div className="row row_column">
+          <div className="row__title row__title_small">Status</div>
+          <div className="row row_between">
+            <Radio list={radioItems2} title="Enable" value="0" />
+          </div>
         </div>
+        <div className="row">
           <Button title="Create" className="button_blue center" />
+        </div>
+      </Block>
+
+      <Block title="Set Trial Period" className="block__title_small block_grey">
+        <div className="row row_between row_bBorder">
+          <div className="row__title row__title_small row__title_fwNone">Current Trial Period</div>
+          <div>0 days 4 hours 0 minutes</div>
+        </div>
+        <div className="row row_column row_bBorder">
+          <div className="row__title row__title_small row__title_fwNone">New Trial Period</div>
+          <div className="row row_between">
+            <Input label="days" className="label_right small" />
+            <Input label="hours" className="label_right small" />
+            <Input label="minutes" className="label_right small" />
+            <Button title="Apply" className="button_blue" />
+          </div>
+        </div>
       </Block>
     </ div>
   );
@@ -137,15 +155,15 @@ const listItemsOther = [
 ]
 
 const tableHead = [
-  { id: 'id', label: 'Id', disablePadding: true, numeric: true },
-  { id: 'email', label: 'Email', disablePadding: true, numeric: false },
-  { id: 'created', label: 'Created', disablePadding: true, numeric: false },
-  { id: 'timeLeft', label: 'Time Left', disablePadding: true, numeric: false },
-  { id: 'expaired', label: 'Expaired', disablePadding: true, numeric: false },
-  { id: 'ip', label: 'Ip', disablePadding: true, numeric: false },
-  { id: 'server', label: 'Server', disablePadding: true, numeric: false },
-  { id: 'trafficUsed', label: 'Traffic Used', disablePadding: true, numeric: false },
-  { id: 'status', label: 'Status', disablePadding: true, numeric: false }
+  { id: 'id', label: 'ID', disablePadding: true, numeric: false },
+  { id: 'email', label: 'Email', disablePadding: false, numeric: false },
+  { id: 'created', label: 'Created', disablePadding: false, numeric: false },
+  { id: 'timeLeft', label: 'Time Left', disablePadding: false, numeric: false },
+  { id: 'expaired', label: 'Expaired', disablePadding: false, numeric: false },
+  { id: 'ip', label: 'IP', disablePadding: false, numeric: false },
+  { id: 'server', label: 'Server', disablePadding: false, numeric: false },
+  { id: 'trafficUsed', label: 'Traffic Used', disablePadding: false, numeric: false },
+  { id: 'status', label: 'Status', disablePadding: false, numeric: false },
 ]
 
 function createTableData(id, email, created, timeLeft, expaired, ip, server, trafficUsed, status) {

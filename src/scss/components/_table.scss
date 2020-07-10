@@ -1,7 +1,29 @@
-#tableContainer {
+#tablePaper {
     box-shadow: none;
+}
+
+#tableContainer {
+    overflow-x: unset !important;
 }
 
 #table__head {
     background-color: $bGrey;
+}
+
+#table__head tr th {
+    font-weight: bold;
+    color: $darkGrey
+}
+
+#table__body tr td, #table__body tr th {
+    padding: 0 24px 0 16px;
+}
+
+#toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginationInfo {
+    padding: 0 1rem;
 }

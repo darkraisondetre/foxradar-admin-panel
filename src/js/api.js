@@ -6,6 +6,7 @@ const { floor, random } = Math;
 
 export const ROUTES = {
   Main: { path: "/", exact: true },
+  Login: { path: "/login", exact: true },
 };
 
 export const dispatchEvent = (type, data = {}, element) => {

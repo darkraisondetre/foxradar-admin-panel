@@ -21,8 +21,10 @@
     font-size: 1.6rem;
     font-weight: bold;
     color: $darkGrey;
-    margin-bottom: .4rem;
     &.row__title_small {
         font-size: 1.1rem;
+    }
+    &.row__title_fwNone {
+        font-weight: normal;
     }
 }

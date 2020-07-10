@@ -1,6 +1,6 @@
 .button {
     max-width: 12rem;
-    height: 35px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,34 +16,65 @@
     font-size: 1rem;
     &.button_red {
         background: $red;
+        border-color: $red;
     }
     &.button_green {
         background: $green;
+        border-color: $green;
     }
     &.button_darkGreen {
         background: $darkGreen;
+        border-color: $darkGreen;
     }
     &.button_blue {
         background: $blue;
+        border-color: $blue;
     }
     &.button_orange {
         background: $orange;
+        border-color: $orange;
+        &.button__transparent {
+            color: $orange;
+        }
+    }
+    &.button_smallHeight {
+        height: 30px;
     }
     &.button_transparent {
         background: transparent;
-        color: $darkGreen;
-        padding: .3em 1em;
+        padding: .3rem 1rem;
+        border-width: 1px;
+        border-style: solid;
+        &.button_red {
+            color: $red;
+        }
+        &.button_green {
+            color: $green;
+        }
+        &.button_darkGreen {
+            color: $darkGreen;
+        }
+        &.button_blue {
+            color: $blue;
+        }
+        &.button_orange {
+            color: $orange;
+        }
     }
     &.br-1 {
         border-radius: 1rem;
-    }
-    &.border_darkGreen {
-        border: 1px solid $darkGreen;
     }
     &.center {
         margin-right: auto;
         margin-left: auto;
         justify-content: center;
+        flex-basis: 100%;
+    }
+    &.button_text_grey {
+        color: $grey;
+    }
+    &.button_text_darkGrey {
+        color: $darkGrey;
     }
 }
 

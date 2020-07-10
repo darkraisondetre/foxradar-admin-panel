@@ -10,14 +10,14 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin: 0 .4rem;
+    padding: .4rem 0;
 
     &.label_right {
         flex-direction: row-reverse;
     }
     &.label_top {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
     &:first-child {
         margin-left: 0;
@@ -26,7 +26,7 @@
 
 .input-container div{
     color: $textGrey;
-    margin: .2rem .4rem;
+    margin: .4rem .4rem;
 }
 
 .input-container.label_top div{
@@ -34,7 +34,8 @@
 }
 
 .input-container.label_big div{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     margin-bottom: .6rem;
     color: $darkGrey;
 }
