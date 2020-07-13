@@ -6,28 +6,23 @@ import Radio from '../components/radio';
 import Stat from '../components/stat';
 import Block from '../components/block';
 import CustomTable from '../components/table';
+import Sidebar from '../components/sidebar';
 
 import { faChevronDown, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 export default function Main() {
   return (
     <div className="main-page">
-      <Button title="Create New User" className="button_green" />
-      <Button title="Enable" className="button_darkGreen button_transparent br-1" />
-      <Button title="«" className="button_darkGreen button_transparent disabled" />
-      <SelectButton title="Bulk Actions " list={listItems} size="9" value="0" icon={faChevronDown} className="button_blue" />
-      <Button title="Set Trial Period" className="button_orange" />
-      <Button className="button_red" icon={faEllipsisH} />
-      <Input label="Search: " placeholder="Click to Find" />
-      <SelectButton list={listItemsOther} size="5" value="0" icon={faEllipsisH} className="button_darkGreen" />
-      <Radio list={radioItems} title="Enable" value="0" />
-      <Stat title="Registered Users" text="0" />
-      <Stat title="Total Traffic Used" text="5 GB" />
-      <div className="row">
-        <div className="row__title">Users</div>
-        <Radio list={radioItems} title="Enable" value="0" />
-        <Button title="Apply" className="button_blue" />
-      </div>
+      <div className="main-page__sidebar"><Sidebar /></div>
+      <div className="main-page__content">
+        <div className="row row_between">
+          <Stat title="Registered Users" text="0" />
+          <Stat title="Logined Users" text="0" />
+          <Stat title="Connected Users" text="0" />
+          <Stat title="Expired Users" text="0" />
+          <Stat title="Disabled Users" text="0" />
+          <Stat title="Total Traffic Used" text="0 GB" />
+        </div>
       <Block
         title="Users"
         className="block__main_p0"
@@ -43,12 +38,10 @@ export default function Main() {
             <Button title="Set Trial Period" className="button_orange" />
           </div>
         }>
-        <div className="row">
-          <CustomTable headCells={tableHead} rowCells={tableRows} />
-        </div>
+        <CustomTable headCells={tableHead} rowCells={tableRows} />
       </Block >
 
-      <Block title="Adjust Time for john@gmail.com" className="block__title_small block_grey">
+      {/* <Block title="Adjust Time for john@gmail.com" className="block__title_small block_grey">
         <div className="row row_column row_bBorder">
           <div className="row__title row__title_small">Deposit</div>
           <div className="row row_between">
@@ -108,7 +101,7 @@ export default function Main() {
       <Block title="Set Trial Period" className="block__title_small block_grey">
         <div className="row row_between row_bBorder">
           <div className="row__title row__title_small row__title_fwNone">Current Trial Period</div>
-          <div>0 days 4 hours 0 minutes</div>
+          <div class="text_color_grey">0 days 4 hours 0 minutes</div>
         </div>
         <div className="row row_column row_bBorder">
           <div className="row__title row__title_small row__title_fwNone">New Trial Period</div>
@@ -119,7 +112,8 @@ export default function Main() {
             <Button title="Apply" className="button_blue" />
           </div>
         </div>
-      </Block>
+      </Block> */}
+      </div>
     </ div>
   );
 }

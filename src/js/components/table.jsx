@@ -14,9 +14,9 @@ import {
   TableSortLabel,
   Toolbar,
   Typography,
-  IconButton,
   Tooltip,
 } from '@material-ui/core';
+import Pagination from '@material-ui/lab/Pagination';
 
 import { faTrash, faFilter, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -96,7 +96,7 @@ function EnhancedTableHead(props) {
             </TableSortLabel>
           </TableCell>
         ))}
-        <TableCell padding="none"/>
+        <TableCell padding="none" />
       </TableRow>
     </TableHead>
   );
@@ -110,31 +110,6 @@ EnhancedTableHead.propTypes = {
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
   headCells: PropTypes.array.isRequired
-};
-
-const EnhancedTableToolbar = (props) => {
-  const { numSelected, rowsPerPage } = props;
-
-  return (
-    <Toolbar id="toolbar">
-      {numSelected > 0 ? (
-        <Typography id="topography_title" color="inherit" variant="subtitle1" component="div">
-          {numSelected} selected
-        </Typography>
-      ) : (
-          <Typography variant="subtitle1" id="tableTitle" component="div">
-            <div>{`Show ${rowsPerPage} entires`}</div>
-          </Typography>
-        )}
-      <Tooltip title="Search">
-        <Input label="Search:" />
-      </Tooltip>
-    </Toolbar>
-  );
-};
-
-EnhancedTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
 };
 
 export default function EnhancedTable(props) {
@@ -180,7 +155,7 @@ export default function EnhancedTable(props) {
   };
 
   const handleChangePage = (event, newPage) => {
-    setPage(newPage);
+    setPage(newPage - 1);
   };
 
   const handleChangeRowsPerPage = (event) => {
@@ -195,7 +170,33 @@ export default function EnhancedTable(props) {
   return (
     <div id="tableRoot">
       <Paper id="tablePaper">
-        <EnhancedTableToolbar numSelected={selected.length} rowsPerPage={rowsPerPage} />
+
+        <Toolbar id="toolbar">
+          {selected.length > 0 ? (
+            <Typography id="topography_title" color="inherit" variant="subtitle1" component="div">
+              {selected.length} selected
+            </Typography>
+          ) : (
+              <Typography variant="subtitle1" id="tableTitle" component="div">
+                <div className="row">
+                  Show <TablePagination
+                    id="bottomTablePagination"
+                    rowsPerPageOptions={[5, 10]}
+                    component="div"
+                    count={props.rowCells.length}
+                    rowsPerPage={rowsPerPage}
+                    page={page}
+                    onChangePage={handleChangePage}
+                    onChangeRowsPerPage={handleChangeRowsPerPage}
+                  /> entries
+                </div>
+              </Typography>
+            )}
+          <Tooltip title="Search">
+            <Input label="Search:" />
+          </Tooltip>
+        </Toolbar>
+
         <TableContainer id="tableContainer" >
           <Table id="table" aria-labelledby="tableTitle" size="small" aria-label="enhanced table">
             <EnhancedTableHead
@@ -242,13 +243,13 @@ export default function EnhancedTable(props) {
                       {row.status === "Enabled"
                         ? (
                           <TableCell align="center">
-                            <Button title={row.status} 
-                            className="button_darkGreen button_smallHeight button_transparent br-1" />
+                            <Button title={row.status}
+                              className="button_darkGreen button_smallHeight button_transparent br-1" />
                           </TableCell>
                         ) : (
                           <TableCell align="center">
-                            <Button title={row.status} 
-                            className="button_red button_smallHeight button_transparent br-1" />
+                            <Button title={row.status}
+                              className="button_red button_smallHeight button_transparent br-1" />
                           </TableCell>
                         )}
 
@@ -271,7 +272,7 @@ export default function EnhancedTable(props) {
             </TableBody>
           </Table>
         </TableContainer>
-        <div className="row row_between">
+        <div className="row">
           <div className="paginationInfo">
             {`Showing ${props.rowCells.length === 0
               ? 0
@@ -280,25 +281,19 @@ export default function EnhancedTable(props) {
               ${props.rowCells.length !== -1
                 ? Math.min(props.rowCells.length, (page + 1) * rowsPerPage)
                 : (page + 1) * rowsPerPage}
-               of ${props.rowCells.length} entires`}
+               of ${props.rowCells.length} entries`}
           </div>
-          <TablePagination
-            id="bottomTablePagination"
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={props.rowCells.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onChangePage={handleChangePage}
-            onChangeRowsPerPage={handleChangeRowsPerPage}
-          />
+          <Pagination 
+          count={Math.ceil(props.rowCells.length / rowsPerPage)}
+          page={page + 1}
+          onChange={handleChangePage}
+          showFirstButton
+          showLastButton
+          variant="outlined"
+          shape="rounded"
+          color="primary" />
         </div>
       </Paper>
     </div>
   );
 }
-
-// const fromPagination = props.rowCells.length === 0 ? 0 : page * rowsPerPage + 1;
-// const toPagination = props.rowCells.length !== -1 
-//   ? Math.min(props.rowCells.length, (page + 1) * rowsPerPage) 
-//   : (page + 1) * rowsPerPage;

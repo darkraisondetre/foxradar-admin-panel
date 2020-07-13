@@ -1,12 +1,18 @@
 .main-page {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
     background-color: $bGrey;
+}
+
+.main-page__content {
     padding: 1rem;
+    margin: 0 auto;
 }
 
 .text_color_grey {
     color: $grey;
+}
+
+.p0 {
+    padding: 0 !important;
 }

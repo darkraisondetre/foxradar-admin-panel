@@ -9,10 +9,11 @@ export default class Stat extends React.Component {
   }
 
   render() {
+    const { title, text } = this.props;
     return (
       <div className="stat">
-        <div className="stat__title">{this.props.title}</div>
-        <div className="stat__text">{this.props.text}</div>
+        <div className="stat__title">{title}</div>
+        <div className="stat__text">{text}</div>
       </div>
     );
   }

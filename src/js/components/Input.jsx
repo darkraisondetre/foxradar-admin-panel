@@ -10,6 +10,7 @@ export default class Input extends React.Component {
   static defaultProps = {
     placeholder: "",
     className: "",
+    type: 'text',
   }
 
   handleChange = (event) => {
@@ -17,15 +18,15 @@ export default class Input extends React.Component {
   }
 
   render() {
+    const { className, label, placeholder, type } = this.props;
     return (
       <div
         className={api.setClasses(
-          ["input-container", this.props.className],
+          ["input-container", className],
         )}>
-
-        <div>{this.props.label}</div>
-        <input type="text" placeholder={this.props.placeholder} value={this.state.value}
-          onChange={this.handleChange} className="input br-3" />
+        {label ? <div>{label}</div> : false}
+        <input type={type} placeholder={placeholder} value={this.state.value}
+          onChange={this.handleChange} className="input" />
       </div>
     );
   }

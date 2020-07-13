@@ -35,30 +35,32 @@ export default class SelectButton extends React.Component {
     const selectValue = {
       value: this.state.value,
     }
+
+    const { title, icon, className, size, list } = this.props;
     return (
       <Button
-        title={this.props.title}
-        icon={this.props.icon}
+        title={title}
+        icon={icon}
         onClick={this.toggleShow}
-        className={this.props.className}
+        className={className}
         value={selectValue.value}>
         <div
           className={api.setClasses(
-            ["list", this.props.className],
+            ["list", className],
             {
               hidden: !this.state.isToggleOn
             }
           )}
           value={selectValue.value}
-          onChange={ this.handleChange }
-          size={this.props.size}
-          style={{ height: `${SelectButton.LINEHEIGHT * this.props.size}px` }}>
+          onChange={this.handleChange}
+          size={size}
+          style={{ height: `${SelectButton.LINEHEIGHT * size}px` }}>
           {
-            this.props.list.map((item, index) => {
+            list.map((item, index) => {
               return <div
                 className={api.setClasses(
                   ["list__item"],
-                  { 
+                  {
                     bb: item.devider === 1,
                     selected: this.state.value === index
                   }

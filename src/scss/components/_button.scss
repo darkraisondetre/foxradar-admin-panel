@@ -64,7 +64,7 @@
     &.br-1 {
         border-radius: 1rem;
     }
-    &.center {
+    &.button_center {
         margin-right: auto;
         margin-left: auto;
         justify-content: center;
@@ -75,6 +75,12 @@
     }
     &.button_text_darkGrey {
         color: $darkGrey;
+    }
+    &.button_large {
+        max-width: none;
+        height: 50px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

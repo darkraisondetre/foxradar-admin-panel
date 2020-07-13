@@ -1,34 +1,20 @@
 import React from 'react';
+import Input from '../components/input';
+import Button from '../components/button';
+import { Checkbox } from '@material-ui/core';
 
-export default class Login extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     error: null,
-  //     items: null,
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   fetch("https://dev_pubgserverapi.public.osora.ru/index.php/api/admin/users_list")
-  //     .then(res => res.json())
-  //     .then(
-  //       (result) => {
-  //         this.setState({
-  //           items: result
-  //         });
-  //       },
-  //       (error) => {
-  //         this.setState({
-  //           error
-  //         });
-  //       }
-  //     )
-  // }
-  render() {
-    return (
-      <div>
+export default function Login() {
+  return(
+    <div className="loginPage">
+      <div className="loginContainer">
+        <h1 className="loginContainer__title">FOXRADAR</h1>
+        <div className="loginContainer__content">
+          <Input className="input_dark input_large" placeholder="Email"/>
+          <Input type="password" className="input_dark input_large" placeholder="Password"/>
+          <div className="loginContainer__checkbox"><Checkbox />Remember me</div>
+          <Button className="button_red button_large" title="Login" />
+        </div>
       </div>
-    )
-  }
+    </div>
+  )
 }

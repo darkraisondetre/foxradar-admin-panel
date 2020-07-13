@@ -8,19 +8,20 @@ export default class Block extends React.Component {
   }
 
   render() {
+    const { className, title, blockTools, children } = this.props;
     return (
       <div
       className={api.setClasses(
-        ["block", this.props.className],
+        ["block", className],
         )}>
         <div className="block__title">
-          {this.props.title}
-          {this.props.blockTools}
+          {title}
+          {blockTools}
         </div>
         <div className="block__main">
-          {this.props.children}
+          {children}
         </div>
-      </div>      
+      </div>
     );
   }
 }

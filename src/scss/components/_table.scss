@@ -1,3 +1,7 @@
+#tableRoot {
+    padding-bottom: 1rem;
+}
+
 #tablePaper {
     box-shadow: none;
 }
@@ -22,8 +26,34 @@
 #toolbar {
     display: flex;
     justify-content: space-between;
+    min-height: unset;
 }
 
 .paginationInfo {
     padding: 0 1rem;
+    flex-basis: 40%;
+    text-align: left;
 }
+
+#bottomTablePagination .MuiToolbar-regular {
+    padding: 0 .2rem;
+}
+
+#bottomTablePagination .MuiToolbar-regular p.MuiTablePagination-caption {
+    display: none;
+}
+
+#bottomTablePagination .MuiToolbar-regular .MuiTablePagination-input {
+    margin: 0 .4rem;
+}
+
+#bottomTablePagination .MuiToolbar-regular .MuiTablePagination-actions {
+    display: none;
+}
+
+#tablePaper .MuiPaginationItem-outlinedPrimary.Mui-selected {
+    color: $white;
+    background-color: $blue;
+    border: none;
+}
+

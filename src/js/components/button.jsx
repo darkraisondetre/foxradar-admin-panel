@@ -16,16 +16,17 @@ export default class Button extends React.Component {
   }
 
   render() {
+    const { className, onClick, title, icon, children } = this.props
     return (
       <div
         className={api.setClasses(
-          ["button", this.props.className],
+          ["button", className],
         )}
-        onClick={this.props.onClick}
+        onClick={onClick}
       >
-        <span>{this.props.title}</span>
-        {this.props.icon && this.renderIcon()}
-        {this.props.children}
+        <span>{title}</span>
+        {icon && this.renderIcon()}
+        {children}
       </div>
     );
   }

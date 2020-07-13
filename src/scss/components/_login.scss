@@ -1,0 +1,42 @@
+.loginPage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bDark;
+    padding: 0 2rem;
+}
+
+.loginContainer {
+    padding: 1rem;
+    text-align: center;
+}
+
+.loginContainer__content .input-container {
+    margin: .8rem 0;
+}
+
+.loginContainer__title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 6rem;
+    color: $white;
+}
+
+.loginContainer__checkbox, .loginContainer__checkbox span {
+    color: $authTextColor;
+    text-align: left;
+    padding: 0;
+}
+
+.loginContainer__checkbox span {
+    margin: .3rem 0;
+}
+
+@media (max-width: 450px) {
+    .loginContainer__title {
+        font-size: 3rem;
+        margin-bottom: 4.5rem;
+    }
+}

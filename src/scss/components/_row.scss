@@ -12,6 +12,9 @@
     &.row_between {
         justify-content: space-between;
     }
+    &.row_wrap {
+        flex-wrap: wrap;
+    }
     &.row_center {
         justify-content: center;
     }

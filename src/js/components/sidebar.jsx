@@ -6,12 +6,12 @@ export default class Sidebar extends React.Component {
         return(
             <div className="sidebar">
                 <div className="sidebar__nav">
-                    <ul className="nav-list">
+                    <ul className="nav__list">
                         <li className="nav-link__item"><Link to={``}>Users</Link></li>
                         <li className="nav-link__item"><Link to={`/keys`}>Keys</Link></li>
                         <li className="nav-link__item"><Link to={`/servers`}>Servers</Link></li>
                     </ul>
-                    <div className="nav-logout">
+                    <div className="nav__logout">
                         <div className="nav-link__item"><Link to={`/logout`}>Log Out</Link></div>
                     </div>
                 </div>

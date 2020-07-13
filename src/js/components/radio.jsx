@@ -33,7 +33,7 @@ export default class Radio extends React.Component {
             onClick={() => this.onChange(index)}>
             <div
               className={api.setClasses(
-                [this.className, "radio__button"],
+                ["radio__button", this.props.className ],
                 {selected: this.state.value === index}
               )}></div>
             <div className="radio__title">{item.title}</div>
