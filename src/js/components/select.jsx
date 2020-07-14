@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../components/button';
 import api from '../api';
+import { usePopper } from 'react-popper';
 
 export default class SelectButton extends React.Component {
   constructor(props) {
@@ -37,18 +38,19 @@ export default class SelectButton extends React.Component {
     }
 
     const { title, icon, className, size, list } = this.props;
+
     return (
       <Button
         title={title}
         icon={icon}
-        onClick={this.toggleShow}
+        onClick={ this.toggleShow }
         className={className}
         value={selectValue.value}>
         <div
           className={api.setClasses(
             ["list", className],
             {
-              hidden: !this.state.isToggleOn
+              hidden: !this.state.isToggleOn,
             }
           )}
           value={selectValue.value}
@@ -77,4 +79,4 @@ export default class SelectButton extends React.Component {
   }
 }
 
-SelectButton.LINEHEIGHT = 40;
+SelectButton.LINEHEIGHT = 28;

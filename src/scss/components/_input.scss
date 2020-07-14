@@ -1,9 +1,9 @@
 .input {
-    padding: 0.4rem 0.6rem;
+    padding: 0 0.6rem;
     border: 1px solid grey;
     border-radius: .3rem;
     outline: none;
-    height: 21px;
+    height: 1.875rem;
 }
 
 .input-container{
@@ -34,7 +34,7 @@
         width: 100%;
         font-size: 1.2rem;
         border-radius: .2rem;
-        height: 40px;
+        height: 2.5rem;
     }
 }
 
@@ -43,6 +43,7 @@
 .input-container div{
     color: $textGrey;
     margin: .4rem .4rem;
+    font-size: .75rem;
 }
 
 .input-container.label_top div{

@@ -117,7 +117,7 @@ export default function EnhancedTable(props) {
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -165,8 +165,6 @@ export default function EnhancedTable(props) {
 
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, props.rowCells.length - page * rowsPerPage);
-
   return (
     <div id="tableRoot">
       <Paper id="tablePaper">
@@ -181,7 +179,7 @@ export default function EnhancedTable(props) {
                 <div className="row">
                   Show <TablePagination
                     id="bottomTablePagination"
-                    rowsPerPageOptions={[5, 10]}
+                    rowsPerPageOptions={[10, 15]}
                     component="div"
                     count={props.rowCells.length}
                     rowsPerPage={rowsPerPage}
@@ -198,7 +196,11 @@ export default function EnhancedTable(props) {
         </Toolbar>
 
         <TableContainer id="tableContainer" >
-          <Table id="table" aria-labelledby="tableTitle" size="small" aria-label="enhanced table">
+          <Table 
+          id="table" 
+          aria-labelledby="tableTitle" 
+          size={window.innerWidth < 1800 ? "small" : "medium"} 
+          aria-label="enhanced table">
             <EnhancedTableHead
               numSelected={selected.length}
               order={order}
@@ -233,29 +235,29 @@ export default function EnhancedTable(props) {
                       <TableCell component="th" id={labelId} scope="row" padding="none">
                         {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.email}</TableCell>
-                      <TableCell align="right">{row.created}</TableCell>
-                      <TableCell align="right">{row.timeLeft}</TableCell>
-                      <TableCell align="right">{row.expaired}</TableCell>
-                      <TableCell align="right">{row.ip}</TableCell>
-                      <TableCell align="right">{row.server}</TableCell>
-                      <TableCell align="right">{row.trafficUsed}</TableCell>
+                      <TableCell>{row.email}</TableCell>
+                      <TableCell>{row.created}</TableCell>
+                      <TableCell>{row.timeLeft}</TableCell>
+                      <TableCell>{row.expaired}</TableCell>
+                      <TableCell>{row.ip}</TableCell>
+                      <TableCell>{row.server}</TableCell>
+                      <TableCell>{row.trafficUsed}</TableCell>
                       {row.status === "Enabled"
                         ? (
-                          <TableCell align="center">
+                          <TableCell>
                             <Button title={row.status}
-                              className="button_darkGreen button_smallHeight button_transparent br-1" />
+                              className="button_darkGreen button_table button_transparent br-1" />
                           </TableCell>
                         ) : (
-                          <TableCell align="center">
+                          <TableCell>
                             <Button title={row.status}
-                              className="button_red button_smallHeight button_transparent br-1" />
+                              className="button_red button_table button_transparent br-1" />
                           </TableCell>
                         )}
 
                       <TableCell>
                         <SelectButton
-                          className="button_text_darkGrey"
+                          className="button_text_darkGrey button_table"
                           list={listOptions}
                           size="5"
                           value="0"
@@ -264,11 +266,6 @@ export default function EnhancedTable(props) {
                     </TableRow>
                   );
                 })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
             </TableBody>
           </Table>
         </TableContainer>
@@ -291,7 +288,11 @@ export default function EnhancedTable(props) {
           showLastButton
           variant="outlined"
           shape="rounded"
-          color="primary" />
+          color="primary"
+          size={
+            window.innerWidth < 1300 ? "small"
+            : window.innerWidth < 1900 ? "medium"
+            : "large"} />
         </div>
       </Paper>
     </div>

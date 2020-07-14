@@ -1,5 +1,4 @@
 .block {
-    width: fit-content;
     background-color: $white;
     border-radius: .4rem;
     box-shadow: $shadow;
@@ -10,9 +9,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     color: $darkGrey;
-    padding: 0 1rem;
+    padding: 0 1.3rem;
     font-weight: bold;
 }
 

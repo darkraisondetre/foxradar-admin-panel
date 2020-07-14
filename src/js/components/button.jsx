@@ -21,6 +21,7 @@ export default class Button extends React.Component {
       <div
         className={api.setClasses(
           ["button", className],
+          { button_icon: title }
         )}
         onClick={onClick}
       >

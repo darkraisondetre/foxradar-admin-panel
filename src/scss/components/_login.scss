@@ -24,6 +24,10 @@
     color: $white;
 }
 
+.loginContainer__checkbox {
+    margin-bottom: 2rem;
+}
+
 .loginContainer__checkbox, .loginContainer__checkbox span {
     color: $authTextColor;
     text-align: left;
@@ -31,7 +35,7 @@
 }
 
 .loginContainer__checkbox span {
-    margin: .3rem 0;
+    margin-right: .4rem;
 }
 
 @media (max-width: 450px) {
