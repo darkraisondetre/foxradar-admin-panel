@@ -8,6 +8,8 @@ import Block from '../components/block';
 import CustomTable from '../components/table';
 import Sidebar from '../components/sidebar';
 
+// import Test from '../components/test';
+
 import { faChevronDown, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 export default function Main() {

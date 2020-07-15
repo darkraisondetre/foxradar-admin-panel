@@ -3,80 +3,61 @@ import Button from '../components/button';
 import api from '../api';
 import { usePopper } from 'react-popper';
 
-export default class SelectButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isToggleOn: false,
-      value: 0,
-    };
-  }
+export default function SelectButton(props) {
+  const [value, selectValue] = useState(0);
+  const [isToggleOn, toggleShow] = useState(false);
+  const { title, icon, className, size, list } = props;
 
-  static defaultProps = {
-    className: "",
-    title: "",
-    icon: false,
-    size: 9
-  }
+  const [referenceElement, setReferenceElement] = useState(null);
+  const [popperElement, setPopperElement] = useState(null);
+  const [arrowElement, setArrowElement] = useState(null);
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
+  });
 
-  toggleShow = () => {
-    this.setState({
-      isToggleOn: !this.state.isToggleOn
-    });
-  }
-
-  onChoose = (id) => {
-    this.setState({
-      value: id
-    });
-    console.log(id);
-  }
-
-  render() {
-    const selectValue = {
-      value: this.state.value,
-    }
-
-    const { title, icon, className, size, list } = this.props;
-
-    return (
-      <Button
-        title={title}
-        icon={icon}
-        onClick={ this.toggleShow }
-        className={className}
-        value={selectValue.value}>
-        <div
-          className={api.setClasses(
-            ["list", className],
-            {
-              hidden: !this.state.isToggleOn,
-            }
-          )}
-          value={selectValue.value}
-          onChange={this.handleChange}
-          size={size}
-          style={{ height: `${SelectButton.LINEHEIGHT * size}px` }}>
+  return (
+    <Button
+      title={title}
+      icon={icon}
+      onClick={() => toggleShow(!isToggleOn)}
+      className={className}
+      ref={setReferenceElement}
+      value={selectValue.value}
+    >
+      <div
+        className={api.setClasses(
+          ["list", className],
           {
-            list.map((item, index) => {
-              return <div
-                className={api.setClasses(
-                  ["list__item"],
-                  {
-                    bb: item.devider === 1,
-                    selected: this.state.value === index
-                  }
-                )}
-                key={index}
-                onClick={() => this.onChoose(index)}>
-                {item.title}
-              </div>
-            })
+            hidden: !isToggleOn,
           }
-        </div>
-      </Button>
-    );
-  }
+        )}
+        value={selectValue.value}
+        size={size}
+        ref={setPopperElement}
+        style={styles.popper}
+        {...attributes.popper}
+      >
+        {
+          list.map((item, index) => {
+            return <div
+              className={api.setClasses(
+                ["list__item"],
+                {
+                  bb: item.devider === 1,
+                  selected: selectValue.value === index
+                }
+              )}
+              key={index}
+              onClick={() => {
+                selectValue.value = index;
+              }}
+              >
+              {item.title}
+            </div>
+          })
+        }
+        <div ref={setArrowElement} style={styles.arrow} />
+      </div>
+    </Button>
+  );
 }
-
-SelectButton.LINEHEIGHT = 28;
